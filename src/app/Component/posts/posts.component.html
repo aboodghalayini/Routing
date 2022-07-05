@@ -1,0 +1,23 @@
+<button class="btn btn-warning m-5" (click)="createpost()">create post</button>
+<div class="row m-5">
+    <div class="card m-2" style="width: 18rem;" *ngFor="let item of posts">
+        <h4>
+           id : {{item.id}}
+        </h4>
+        <h5>
+           text : {{item.text}}
+        </h5>
+        <img src="{{item.image}}">
+        <h6>
+           linkes : {{item.likes}}
+        </h6>
+        <p>
+           tags : {{item.tags}}
+        </p>
+        <div>
+            publishDate : {{item.publishDate}}
+        </div>
+        <button class="btn btn-warning" (click)="update(item.id,'abood')">update</button>
+        <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
+    </div>
+    </div>

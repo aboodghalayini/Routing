@@ -1,0 +1,22 @@
+<table class="table m-5">
+    <thead class="thead-dark m-5">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">firstName</th>
+        <th scope="col">lastName</th>
+        <th scope="col">picture</th>
+        <th scope="col"><button class="btn btn-primary m-5" (click)="createUser()">Create User</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users">
+        <th scope="row" (click)="view(item.id)">{{item.id}}</th>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td><img src="{{item.picture}}"></td>
+        <td>
+            <button class="btn btn-warning" (click)="update(item.id,'abood')">update</button>
+            <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
+            </td>
+    </tbody>
+  </table>
