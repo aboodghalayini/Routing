@@ -18,10 +18,10 @@ getUsers(){
  this.user.getUsers().subscribe(response => {this.users= response.data;});
 }
 createUser(){
-  this.router.navigate(['creat-user/','']);
+  this.router.navigate(['user-form/','']);
 }
    update(id:string,name:string){
-    this.router.navigate(['creat-user/',id]);
+    this.router.navigate(['user-form/',id]);
 }
 delete(id:string){
   this.user.delete(id).subscribe(() => this.getUsers());

@@ -18,7 +18,7 @@ getUsers():Observable<List<UserPreview>>{
   return this.http.get<List<UserPreview>>(`${this.baseURL}/user`,{...this.options});
   // , params: { created: 1 }
 }
-createUser(payload: CreateUserModel): Observable<UserPreview> {
+createUser(payload: any): Observable<UserPreview> {
   return this.http.post<UserPreview>(`${this.baseURL}/user/create`, payload, this.options).pipe(
       retry(2),
       catchError(this.handleError),
@@ -28,7 +28,7 @@ handleError(error: HttpErrorResponse): Observable<never> {
   console.log('Inside handleError():', error);
   return throwError('some error occurred');
 }
-update(id: string, user:UpdateUser, ):Observable<UserPreview> {
+update(id: string, user:any, ):Observable<UserPreview> {
   return this.http.put<UserPreview>(this.baseURL+'/user/'+id,user,this.options);
 }
 delete(id:string):Observable<string>{

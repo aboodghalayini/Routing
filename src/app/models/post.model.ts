@@ -1,10 +1,11 @@
+import { UserPreview } from "./user.model";
 export interface postcreate
 {
-    text: string;
-    image: string;
-    likes: number;
-    tags: Array<string>;
-    owner: string;
+    text: string | undefined | null;
+  image: string | undefined | null;
+  likes: string | undefined | null;
+  tags: Array<string> | undefined | null;
+  owner: string | undefined | null;
 }
 export interface PostPreview
 {
@@ -14,7 +15,7 @@ export interface PostPreview
     likes: number;
     tags: Array<string>;
     publishDate: string;
-    owner: object;
+    owner: UserPreview;
 }
 export interface post
 {
@@ -26,4 +27,14 @@ export interface post
     tags: Array<string>;
     publishDate: string;
     owner: object;
-    }
+}
+export interface UpdatePost {
+    text: string;
+    image: string;
+    likes: number;
+  }
+  
+  // Post data returned by id.
+  export interface Post extends UpdatePost {
+    owner: UserPreview;
+  }

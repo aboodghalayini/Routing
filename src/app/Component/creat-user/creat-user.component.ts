@@ -73,6 +73,7 @@ export class CreatUserComponent implements OnInit {
           for (const key in err.error.data) {
             this.errors.push(err.error.data[key].replace('Path', ''));
           }
+          console.log(this.errors)
         }
       );
     }

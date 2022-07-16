@@ -19,14 +19,10 @@ export class PostsComponent implements OnInit {
     this.getposts();
   }
   update(id:string,text:string){
-    this.post.update(id, text).subscribe(Response => {this.getposts()});
+    this.router.navigate(['post-form/',this.id,id])
  }
  createpost(){
-  this.post.createpost({
-    text: 'assadsad', image: '', owner: this.id,
-    likes: 0,
-    tags: []
-  }).subscribe(() =>{console.log('created post');this.getposts();});
+  this.router.navigate(['post-form/',this.id])
  }
  getposts(){
   this.post.getpost().subscribe(response => {this.posts= response.data;});

@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,8 @@ import { NullComponent } from './Component/null/null.component';
 import { PostsComponent } from './Component/posts/posts.component';
 import { UserdetailesComponent } from './Component/userdetailes/userdetailes.component';
 import { UserlistComponent } from './Component/userlist/userlist.component';
+import { UserReactiveFormComponent } from './Component/user-reactive-form/user-reactive-form.component';
+import { PostFormComponent } from './Component/post-form/post-form.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,16 @@ import { UserlistComponent } from './Component/userlist/userlist.component';
     NullComponent,
     PostsComponent,
     UserdetailesComponent,
-    UserlistComponent
+    UserlistComponent,
+    UserReactiveFormComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
